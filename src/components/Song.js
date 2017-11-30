@@ -4,6 +4,7 @@ class Song extends Component {
   constructor(props) {
     super(props);
     this.handleMouseHover = this.handleMouseHover.bind(this);
+
     this.state = {
       isHovering: false
     };
@@ -19,8 +20,10 @@ class Song extends Component {
       buttonStyle = (<span className="ion-play"></span>);
     }
     return (
-      <tr className="song" key={this.props.index}>
-        <td className="song-actions" onMouseEnter={() => this.handleMouseHover()} onMouseLeave={() => this.handleMouseHover()}>
+      <tr className="song" key={this.props.index}
+        onMouseEnter={() => this.handleMouseHover()}
+        onMouseLeave={() => this.handleMouseHover()} >
+        <td className="song-actions">
           <button>
             {buttonStyle}
           </button>
