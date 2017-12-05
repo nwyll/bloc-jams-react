@@ -55,7 +55,7 @@ class Album extends Component {
 
   pause() {
     this.audioElement.pause();
-    this.setState({ isPlaying: true });
+    this.setState({ isPlaying: false });
   }
 
   setSong(song) {
@@ -142,6 +142,7 @@ class Album extends Component {
                   song={song}
                   index={index}
                   handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+                  formatTime={(time) => this.formatTime(time)}
                 />
               )
             }

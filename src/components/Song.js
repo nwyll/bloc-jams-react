@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../styles/song.css';
+import Ionicon from 'react-ionicons';
 
 class Song extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Song extends Component {
   render () {
     let buttonStyle = (<span className="song-number">{this.props.index + 1}</span>);
     if(this.state.isHovering) {
-      buttonStyle = (<span className="ion-play"></span>);
+      buttonStyle = (<Ionicon icon="play" />);
     }
     return (
       <tr className="song"
@@ -27,12 +29,12 @@ class Song extends Component {
         onClick={this.props.handleSongClick}
         >
         <td className="song-actions">
-          <button>
+          <button className="song-button">
             {buttonStyle}
           </button>
         </td>
         <td className="song-title">{this.props.song.title}</td>
-        <td className="song-duration">{this.props.song.duration}</td>
+        <td className="song-duration">{this.props.formatTime(this.props.song.duration)}</td>
       </tr>
     );
   }
