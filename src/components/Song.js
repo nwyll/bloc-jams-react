@@ -20,9 +20,12 @@ class Song extends Component {
       buttonStyle = (<span className="ion-play"></span>);
     }
     return (
-      <tr className="song" key={this.props.index}
+      <tr className="song"
+        key={this.props.index}
         onMouseEnter={() => this.handleMouseHover()}
-        onMouseLeave={() => this.handleMouseHover()} >
+        onMouseLeave={() => this.handleMouseHover()}
+        onClick={this.props.handleSongClick}
+        >
         <td className="song-actions">
           <button>
             {buttonStyle}
